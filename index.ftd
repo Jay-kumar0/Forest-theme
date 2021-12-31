@@ -75,13 +75,11 @@ padding-vertical: 20
 
 -- ftd.text site-link:
 caption title:
-string link:
 size: 16
 style: semi-bold
 font: apple-system
 color: black
 text: $title
-link: $link
 line-height: 22
 position: center
 
@@ -143,15 +141,14 @@ id: left-side
 
 --- ftd.row:
 spacing: 10
+link: $site-url
 
 --- ftd.image:
 src: $site-icon
 height: 32
 width: auto
-link: $site-url
 
 --- site-link: $site-name
-link: $site-url
 
 --- container: left-side
 
