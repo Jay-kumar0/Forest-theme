@@ -44,7 +44,7 @@ id:  content-container
 
 
 -- ftd.column doc-page:
-toc-item list toc:
+toc-item list toc: $toc
 width: fill
 open: main-container
 background-color: $neutral
