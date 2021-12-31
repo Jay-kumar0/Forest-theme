@@ -1,0 +1,4 @@
+-- import: fpm
+
+-- fpm.package: fifthtry.github.io/Flash-theme
+zip: github.com/fifthtry/flash-theme/archive/refs/heads/main.zip
