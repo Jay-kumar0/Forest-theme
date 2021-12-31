@@ -166,13 +166,13 @@ spacing: 30
 width: auto
 
 --- ftd.image:
-src: static/images/github-dark.svg
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
 width: 20
 min-width: 20
 link: $github
 
 --- ftd.image:
-src: static/images/dark-mode.svg
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
 $event-click$: toggle $dark-mode
 
