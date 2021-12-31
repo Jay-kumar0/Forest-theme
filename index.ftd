@@ -16,6 +16,8 @@
 -- string github: NA
 -- string site-name: NA
 -- string site-icon: NA
+-- string site-url: NA
+
 
 -- record toc-item:
 caption title:
@@ -146,9 +148,10 @@ spacing: 10
 src: $site-icon
 height: 32
 width: auto
+link: $site-url
 
 --- site-link: $site-name
-link: /
+link: $site-url
 
 --- container: left-side
 
