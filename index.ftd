@@ -652,3 +652,37 @@ padding-left: 20
 padding-right: 20
 border-radius: 2
 background-color: #f6faff
+
+
+-- ftd.column image:
+string src:
+optional caption caption:
+optional body body:
+optional string link:
+optional string align:
+optional string width:
+optional string height:
+width: fill
+height: fill
+padding-bottom: 20
+
+--- ftd.image:
+src: $src
+padding-bottom: 15
+width: $width
+height: $height
+align: $align
+
+--- ftd.text:
+if: $caption is not null
+text: $caption
+color: $neutral-800
+align: center
+width: fill
+size: 17
+style: italic
+font: Open sans
+
+--- markdown:
+if: $body is not null
+body: $body
