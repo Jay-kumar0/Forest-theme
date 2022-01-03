@@ -66,19 +66,21 @@ id:  content-container
 
 
 -- ftd.column doc-page:
+toc-item list toc: $toc
 width: fill
 open: main-container
 
 --- doc-page-desktop:
 if: not $mobile
 id: main-container
+toc: $toc
 
 --- container: ftd.main
 
 --- doc-page-mobile:
 if: $mobile
 id: main-container
-
+toc: $toc
 
 -- ftd.column doc-page-desktop:
 toc-item list toc: $toc
