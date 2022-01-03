@@ -42,6 +42,17 @@ id:  content-container
 
 --- footer:
 
+-- ftd.column content:
+width: fill
+open: content-container
+padding-vertical: 30
+
+--- ftd.column:
+max-width: 800
+width: fill
+position: center
+id:  content-container
+
 
 -- ftd.column doc-page:
 toc-item list toc: $toc
