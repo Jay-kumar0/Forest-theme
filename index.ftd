@@ -1,6 +1,6 @@
 
 -- boolean dark-mode: true
--- boolean mobile: false
+-- boolean mobile: true
 
 -- string neutral: #fff
 -- string neutral-200: #ced2dd
@@ -36,11 +36,12 @@ open: content-container
 --- header:
 
 --- ftd.column:
-id:  content-container
+id: content-container
 
 --- container: ftd.main
 
 --- footer:
+
 
 -- ftd.column content:
 width: fill
@@ -48,13 +49,38 @@ open: content-container
 padding-vertical: 30
 
 --- ftd.column:
+if: not $mobile
 max-width: 800
 width: fill
 position: center
 id:  content-container
 
+--- container: ftd.main
+
+--- ftd.column:
+if: $mobile
+width: fill
+position: center
+padding-horizontal if $mobile: 20
+id:  content-container
+
 
 -- ftd.column doc-page:
+width: fill
+open: main-container
+
+--- doc-page-desktop:
+if: not $mobile
+id: main-container
+
+--- container: ftd.main
+
+--- doc-page-mobile:
+if: $mobile
+id: main-container
+
+
+-- ftd.column doc-page-desktop:
 toc-item list toc: $toc
 width: fill
 open: main-container
@@ -82,6 +108,29 @@ padding-vertical: 20
 
 --- footer:
 
+
+-- ftd.column doc-page-mobile:
+toc-item list toc: $toc
+width: fill
+open: main-container
+background-color: $neutral
+
+--- header:
+
+--- ftd.row:
+width: fill
+id: main-row
+
+--- ftd.column:
+id: main-container
+width: fill
+align: top
+padding-horizontal: 20
+padding-vertical: 20
+
+--- container: ftd.main
+
+--- footer:
 
 
 -- ftd.text site-link:
@@ -194,10 +243,25 @@ height: 200
 background-color: $neutral-300
 
 
-
-
-
 -- ftd.column hero:
+caption title:
+string image:
+open: main-container
+
+
+--- hero-mobile: $title
+if: $mobile
+id: main-container
+image: $image
+
+--- container: ftd.main
+
+--- hero-desktop: $title
+if: not $mobile
+id: main-container
+image: $image
+
+-- ftd.column hero-desktop:
 caption title:
 string image:
 width: fill
@@ -230,6 +294,44 @@ position: right
 --- ftd.row:
 spacing: 40
 id: action-container
+
+
+-- ftd.column hero-mobile:
+caption title:
+string image:
+optional string id:
+id: $id
+width: fill
+background-color: #2b3136
+padding-horizontal: 20
+padding-vertical: 50
+spacing: 30
+open: action-container
+
+--- ftd.image:
+src: $image
+width: percent 50
+height: auto
+position: center
+
+--- ftd.text: $title
+size: 36
+line-height: 50
+style: bold
+color: $neutral
+padding-horizontal: 20
+position: center
+text-align: center
+font: apple-system
+
+--- container: ftd.main
+
+--- ftd.column:
+spacing: 30
+id: action-container
+position: center
+padding-top: 10
+
 
 -- ftd.text action-button:
 caption title:
@@ -546,12 +648,29 @@ border-top-radius: 4
 overflow-x: auto
 
 
--- ftd.row feature-row:
+-- ftd.row feature-list:
 width: fill
+open: main-container
+
+--- ftd.row:
+width: fill
+if: not $mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
 padding-bottom: 60
+id: main-container
+
+--- container: ftd.main
+
+--- ftd.column:
+if: $mobile
+width: fill
+padding-horizontal: 20
+spacing: space-around
+wrap: true
+padding-bottom: 40
+id: main-container
 
 
 -- ftd.column feature:
@@ -559,6 +678,7 @@ caption title:
 string image:
 body body:
 width: percent 30
+width if $mobile: fill
 spacing: 15
 padding-top: 60
 
@@ -585,13 +705,30 @@ width: fill
 text-align: center
 
 
--- ftd.row testimony-row:
+-- ftd.row testimony-list:
 width: fill
+background-color: #f5f6f7
+open: main-container
+
+--- ftd.row:
+width: fill
+if: not $mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
 padding-bottom: 60
-background-color: #f5f6f7
+id: main-container
+
+--- container: ftd.main
+
+--- ftd.column:
+if: $mobile
+width: fill
+padding-horizontal: 20
+spacing: space-around
+wrap: true
+padding-bottom: 40
+id: main-container
 
 -- ftd.column testimony:
 caption title:
@@ -599,6 +736,7 @@ string image:
 string designation:
 body body:
 width: percent 30
+width if $mobile: fill
 spacing: 15
 padding-top: 60
 
