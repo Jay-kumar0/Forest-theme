@@ -1,6 +1,7 @@
 
 -- boolean dark-mode: true
--- boolean mobile: true
+-- boolean mobile: false
+-- boolean sidebar-open: false
 
 -- string neutral: #fff
 -- string neutral-200: #ced2dd
@@ -34,6 +35,12 @@ background-color: $neutral
 open: content-container
 
 --- header:
+if: not $mobile
+
+--- container: ftd.main
+
+--- header-mobile:
+if:  $mobile
 
 --- ftd.column:
 id: content-container
@@ -117,7 +124,13 @@ width: fill
 open: main-container
 background-color: $neutral
 
---- header:
+--- render-toc-mobile:
+if: $sidebar-open
+toc-obj: $toc
+
+--- container: ftd.main
+
+--- header-mobile:
 
 --- ftd.row:
 width: fill
@@ -196,10 +209,69 @@ padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
 
---- ftd.row: asdads
+--- ftd.row:
 position: left
 spacing: 25
 id: left-side
+
+--- ftd.row:
+spacing: 10
+link: $site-url
+
+--- ftd.image:
+src: $site-icon
+height: 32
+width: auto
+
+--- site-link: $site-name
+
+--- container: left-side
+
+
+--- header-link: $obj.title
+$loop$: $header-toc as $obj
+link: $obj.url
+
+
+--- container: ftd.main
+
+--- ftd.row:
+position: right
+spacing: 30
+width: auto
+
+--- ftd.image:
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
+width: 20
+min-width: 20
+link: $github
+
+--- ftd.image:
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
+height: 18
+$event-click$: toggle $dark-mode
+
+
+-- ftd.row header-mobile:
+width: fill
+background-color: white
+padding-horizontal: 20
+padding-vertical: 10
+border-bottom: 1
+border-color: #e1e1e1
+
+
+--- ftd.row:
+position: left
+spacing: 25
+id: left-side
+
+--- ftd.image:
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1641205689/Vector_3_uzxoow.svg
+width: 24
+height: auto
+$event-click$: toggle $sidebar-open
+position: center
 
 --- ftd.row:
 spacing: 10
@@ -408,6 +480,33 @@ border-color: #ebedef
 $loop$: $toc-obj as $obj
 toc: $obj
 
+
+-- ftd.column render-toc-mobile:
+toc-item list toc-obj:
+sticky: true
+height: calc 100vh - 0px
+overflow-y: auto
+width: percent 70
+align: top-left
+padding-left: 10
+padding-top: 15
+padding-right: 20
+padding-bottom: 40
+border-right: 1
+border-color: #ebedef
+anchor: window
+left: 0
+top: 0
+background-color: white
+shadow-offset-x: 3
+shadow-offset-y: 0
+shadow-size: 1
+shadow-blur: 10
+shadow-color: rgba (0, 0, 0, 0.05)
+
+--- toc-instance:
+$loop$: $toc-obj as $obj
+toc: $obj
 
 
 -- ftd.text markdown:
