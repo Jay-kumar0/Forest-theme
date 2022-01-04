@@ -124,9 +124,24 @@ width: fill
 open: main-container
 background-color: $neutral
 
+
+--- ftd.column:
+if: $sidebar-open
+anchor: window
+top: 0
+bottom: 0
+left: 0
+right: 0
+background-color:  rgba (0, 0, 0, 0.5)
+z-index: 1
+$event-click$: toggle $sidebar-open
+
+--- container: ftd.main
+
 --- render-toc-mobile:
 if: $sidebar-open
 toc-obj: $toc
+
 
 --- container: ftd.main
 
@@ -503,6 +518,7 @@ shadow-offset-y: 0
 shadow-size: 1
 shadow-blur: 10
 shadow-color: rgba (0, 0, 0, 0.05)
+z-index: 4
 
 --- toc-instance:
 $loop$: $toc-obj as $obj
