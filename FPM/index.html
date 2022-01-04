@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
-<head>
-    <meta charset="UTF-8"><base href="/Jupiter-theme">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Welcome to the FPM Package Page</title>
-    <script type="ftd" id="ftd-data">
-        {
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"><base href="/Jupiter-theme">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>Welcome to the FPM Package Page</title>
+        <script type="ftd" id="ftd-data">{
   "@body@0,0": {
     "value": "Here you find everything that you want to know about this package.",
     "dependencies": {}
@@ -84,6 +83,10 @@
     "value": "Missing",
     "dependencies": {}
   },
+  "fpm-ui#mobile": {
+    "value": "true",
+    "dependencies": {}
+  },
   "fpm-ui#never-marked": {
     "value": "Never Marked",
     "dependencies": {}
@@ -152,13 +155,155 @@
     "value": "Here you find everything that you want to know about this package.",
     "dependencies": {}
   }
+}</script>
+        <script type="ftd" id="ftd-external-children">{}</script>
+        <style>html {
+    height: 100%;
+    width: 100%;
 }
-    </script>
-    <script type="ftd" id="ftd-external-children">
-        {}
-    </script>
-    <script>
-        // all ftd_utils are meant to be pure functions only: they can only depend on the
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+pre {
+    white-space: break-spaces;
+}
+
+pre code {
+    overflow-x: auto;
+    display: block;
+    padding: 10px !important;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+.ft_md ul,
+.ft_md ol,
+.ft_md p {
+    margin: 10px 0;
+}
+
+.ft_md h1,
+.ft_md h2,
+.ft_md h3,
+.ft_md h4,
+.ft_md h5 {
+    margin-top: 34px;
+    margin-bottom: 0;
+    line-height: 1.2em;
+    color: #000000;
+}
+
+.ft_md ul ul,
+.ft_md ul ol,
+.ft_md ol ul,
+.ft_md ol ol {
+    line-height: 1.5em;
+    margin: 0;
+}
+
+.ft_md ul li,
+.ft_md ol li,
+.ft_md ul ol li .ft_md ul ul li .ft_md ol ul li .ft_md ol ol li {
+    position: relative;
+    padding-left: 32px;
+    margin: 4px 0;
+}
+
+.ft_md ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ft_md ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: item;
+}
+
+.ft_md ol li:before,
+.ft_md ol ol li:before,
+.ft_md ul ol li:before {
+    content: counter(item);
+    counter-increment: item;
+    background-color: #e4e9eb;
+    color: #000000;
+    font-size: 11px;
+    line-height: 10px;
+    text-align: center;
+    padding: 4px 0;
+    height: 10px;
+    width: 18px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.ft_md ul li::before,
+.ft_md ul ul li::before,
+.ft_md ol ul li::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 8px;
+    top: 10px;
+    border-radius: 50%;
+    background: #c1c8ce;
+}
+
+.ft_md a {
+    color: #0047b4;
+    text-decoration: none;
+}
+
+.ft_md a:visited {
+    color: #632ec4;
+}
+
+.ft_md a:hover {
+    text-decoration: none;
+}
+
+.ft_md code {
+    font-size: 0.9em;
+    padding: 0.1em 0.25em;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.ft_md blockquote {
+    padding: 0.25em 1em;
+    margin: 1em 0;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+.ft_md blockquote>blockquote {
+    margin: 0;
+}
+</style>
+    </head>
+    <body>
+        <div data-id="main:root" style="align-items: flex-start; align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: wrap; height: 100%; justify-content: flex-start; margin-bottom: auto; margin-top: auto; white-space: initial; width: 100%" class="ft_md"><div data-id="0:main" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding: 40px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,0:main" id="welcome-to-the-fpm-package-page" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-left: 90px; padding-right: 90px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,0,0:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-size: 40px; font-weight: 700; padding-bottom: 24px; text-align: left; white-space: initial" class="ft_md">Welcome to the FPM Package Page</div>
+<div data-id="0,0,1:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(77,77,77,1); font-family: apple-system; font-size: 19px; font-weight: 400; line-height: 30px; padding-bottom: 34px; padding-top: 50px; text-align: left; white-space: initial" class="ft_md">Here you find everything that you want to know about this package.</div>
+<div data-id="0,0,2:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-size: 30px; font-weight: 400; text-align: left; white-space: initial" class="ft_md">fifthtry.github.io/Jupiter-theme</div>
+<div data-id="0,0,3:main" data-spacing="margin-left:2px" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 5px; white-space: initial" class="ft_md"><div data-id="0,0,3,0:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-top: auto; text-align: left; white-space: initial" class="ft_md">Language:</div></div>
+<div data-id="0,0,4:main" data-spacing="margin-left:2px" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 5px; white-space: initial" class="ft_md"><div data-id="0,0,4,0:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-top: auto; text-align: left; white-space: initial" class="ft_md">Zip:</div>
+<div data-id="0,0,4,1:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-left: 2px; margin-top: auto; text-align: left; white-space: initial" class="ft_md">github.com/fifthtry/Jupiter-theme/archive/refs/heads/main.zip</div></div></div></div></div>
+        <script>
+            // all ftd_utils are meant to be pure functions only: they can only depend on the
 // input passed, not on closures or global data etc
 let ftd_utils = {
     is_visible: function (id, affected_id) {
@@ -628,158 +773,76 @@ window.ftd = (function () {
         ftd_external_children[id] = external_children;
     }
 
+    exports.set_bool_for_all = function (variable, value) {
+        for (let id in ftd_data) {
+            if (!ftd_data.hasOwnProperty(id)) {
+                continue;
+            }
+
+            exports.set_bool(id, variable, value)
+        }
+    }
+
     return exports;
 })();
 
-    </script>
-    <style>
-        body {
-            margin: 0;
+
+            window.ftd.init(
+                "main",
+                JSON.parse(document.getElementById("ftd-data").innerText),
+                JSON.parse(document.getElementById("ftd-external-children").innerText)
+            );
+
+            (function () {
+    const MOBILE_VARIABLE = "fpm-ui#mobile";
+    const PIXEL_RATIO = window.devicePixelRatio || 1;
+
+    let last = is_mobile();
+    window.ftd.set_bool_for_all(MOBILE_VARIABLE, last);
+
+    window.onresize = function () {
+        let current = is_mobile();
+        if (current !== last) {
+            window.ftd.set_bool_for_all(MOBILE_VARIABLE, current);
+            last = current;
         }
-        pre {
-            white-space: break-spaces;
-        }
+    }
 
-        pre code {
-            overflow-x: auto;
-            display: block;
-            padding: 10px !important;
-        }
+    function is_mobile() {
+        // not at all sure about this functions logic.
+        let width = window.visualViewport.width * PIXEL_RATIO;
 
-        p {
-            margin: 0;
-        }
+        // why 1148? this is the smallest width my desktop safari can shrink to.
+        // in future we may want to have more than one break points, and then
+        // we may also want the theme builders to decide where the breakpoints
+        // should go. we should be able to fetch fpm variables here, or maybe
+        // simply pass the width, user agent etc to fpm and let people put the
+        // checks on width user agent etc, but it would be good if we can
+        // standardise few breakpoints. or maybe we should do both, some
+        // standard breakpoints and pass the raw data.
 
-        ul {
-            margin: 0;
-        }
+        // we would then rename this function to detect_device() which will
+        // return one of "desktop", "tablet", "mobile". and also maybe have
+        // another function detect_orientation(), "landscape" and "portrait" etc,
+        // and instead of setting `fpm-ui#mobile: boolean` we set `fpm-ui#device`
+        // and `fpm-ui#viewport-orientation` etc.
+        return width <= 1148;
+    }
 
-        .ft_md ul,
-        .ft_md ol,
-        .ft_md p {
-            margin: 10px 0;
-        }
+    window.show_main = function () {
+        document.getElementById("main").style.display = "block";
+        document.getElementById("fallback").style.display = "none";
+    }
 
-        .ft_md h1,
-        .ft_md h2,
-        .ft_md h3,
-        .ft_md h4,
-        .ft_md h5 {
-            margin-top: 34px;
-            margin-bottom: 0;
-            line-height: 1.2em;
-            color: #000000;
-        }
+    window.show_fallback = function () {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("fallback").style.display = "block";
+    }
 
-        .ft_md ul ul,
-        .ft_md ul ol,
-        .ft_md ol ul,
-        .ft_md ol ol {
-            line-height: 1.5em;
-            margin: 0;
-        }
-
-        .ft_md ul li,
-        .ft_md ol li,
-        .ft_md ul ol li .ft_md ul ul li .ft_md ol ul li .ft_md ol ol li {
-            position: relative;
-            padding-left: 32px;
-            margin: 4px 0;
-        }
-
-        .ft_md ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .ft_md ol {
-            list-style: none;
-            padding-left: 0;
-            counter-reset: item;
-        }
-
-        .ft_md ol li:before,
-        .ft_md ol ol li:before,
-        .ft_md ul ol li:before {
-            content: counter(item);
-            counter-increment: item;
-            background-color: #e4e9eb;
-            color: #000000;
-            font-size: 11px;
-            line-height: 10px;
-            text-align: center;
-            padding: 4px 0;
-            height: 10px;
-            width: 18px;
-            border-radius: 10px;
-            position: absolute;
-            left: 0;
-            top: 5px;
-        }
-
-        .ft_md ul li::before,
-        .ft_md ul ul li::before,
-        .ft_md ol ul li::before {
-            content: "";
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            left: 8px;
-            top: 10px;
-            border-radius: 50%;
-            background: #c1c8ce;
-        }
-
-        .ft_md a {
-            color: #0047b4;
-            text-decoration: none;
-        }
-
-        .ft_md a:visited {
-            color: #632ec4;
-        }
-
-        .ft_md a:hover {
-            text-decoration: none;
-        }
-
-        .ft_md code {
-            font-size: 0.9em;
-            padding: 0.1em 0.25em;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-        }
-
-        .ft_md blockquote {
-            padding: 0.25em 1em;
-            margin: 1em 0;
-            background-color: #f0f0f0;
-            border-radius: 3px;
-        }
-
-        .ft_md blockquote>blockquote {
-            margin: 0;
-        }
-
-        </style>
-
-</head>
-    <body style="height: 100%;">
-
-        <div data-id="main:root" style="align-items: flex-start; align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: wrap; height: 100%; justify-content: flex-start; margin-bottom: auto; margin-top: auto; white-space: initial; width: 100%" class="ft_md"><div data-id="0:main" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding: 40px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,0:main" id="welcome-to-the-fpm-package-page" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-left: 90px; padding-right: 90px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,0,0:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-size: 40px; font-weight: 700; padding-bottom: 24px; text-align: left; white-space: initial" class="ft_md">Welcome to the FPM Package Page</div>
-<div data-id="0,0,1:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(77,77,77,1); font-family: apple-system; font-size: 19px; font-weight: 400; line-height: 30px; padding-bottom: 34px; padding-top: 50px; text-align: left; white-space: initial" class="ft_md">Here you find everything that you want to know about this package.</div>
-<div data-id="0,0,2:main" style="align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-size: 30px; font-weight: 400; text-align: left; white-space: initial" class="ft_md">fifthtry.github.io/Jupiter-theme</div>
-<div data-id="0,0,3:main" data-spacing="margin-left:2px" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 5px; white-space: initial" class="ft_md"><div data-id="0,0,3,0:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-top: auto; text-align: left; white-space: initial" class="ft_md">Language:</div></div>
-<div data-id="0,0,4:main" data-spacing="margin-left:2px" style="align-items: flex-start; align-self: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 5px; white-space: initial" class="ft_md"><div data-id="0,0,4,0:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-top: auto; text-align: left; white-space: initial" class="ft_md">Zip:</div>
-<div data-id="0,0,4,1:main" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 400; margin-bottom: auto; margin-left: 2px; margin-top: auto; text-align: left; white-space: initial" class="ft_md">github.com/fifthtry/Jupiter-theme/archive/refs/heads/main.zip</div></div></div></div></div>
+})();
 
 
-    <script>
-        window.ftd.init(
-            "main",
-            JSON.parse(document.getElementById("ftd-data").innerText),
-            JSON.parse(document.getElementById("ftd-external-children").innerText)
-        );
-    </script>
+
+        </script>
     </body>
 </html>
