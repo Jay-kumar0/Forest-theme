@@ -1,3 +1,4 @@
+-- import: fpm-ui
 
 -- boolean dark-mode: true
 -- boolean mobile: false
@@ -54,12 +55,12 @@ toc-obj: $header-toc
 --- container: ftd.main
 
 --- header:
-if: not $mobile
+if: not $fpm-ui.mobile
 
 --- container: ftd.main
 
 --- header-mobile:
-if:  $mobile
+if:  $fpm-ui.mobile
 
 --- ftd.column:
 id: content-container
@@ -75,7 +76,7 @@ open: content-container
 padding-vertical: 30
 
 --- ftd.column:
-if: not $mobile
+if: not $fpm-ui.mobile
 max-width: 800
 width: fill
 position: center
@@ -84,10 +85,10 @@ id:  content-container
 --- container: ftd.main
 
 --- ftd.column:
-if: $mobile
+if: $fpm-ui.mobile
 width: fill
 position: center
-padding-horizontal if $mobile: 20
+padding-horizontal if $fpm-ui.mobile: 20
 id:  content-container
 
 
@@ -97,14 +98,14 @@ width: fill
 open: main-container
 
 --- doc-page-desktop:
-if: not $mobile
+if: not $fpm-ui.mobile
 id: main-container
 toc: $toc
 
 --- container: ftd.main
 
 --- doc-page-mobile:
-if: $mobile
+if: $fpm-ui.mobile
 id: main-container
 toc: $toc
 
@@ -353,14 +354,14 @@ open: main-container
 
 
 --- hero-mobile: $title
-if: $mobile
+if: $fpm-ui.mobile
 id: main-container
 image: $image
 
 --- container: ftd.main
 
 --- hero-desktop: $title
-if: not $mobile
+if: not $fpm-ui.mobile
 id: main-container
 image: $image
 
@@ -784,8 +785,8 @@ width: fill
 open: main-container
 
 --- ftd.row:
+if: not $fpm-ui.mobile
 width: fill
-if: not $mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
@@ -795,7 +796,7 @@ id: main-container
 --- container: ftd.main
 
 --- ftd.column:
-if: $mobile
+if: $fpm-ui.mobile
 width: fill
 padding-horizontal: 20
 spacing: space-around
@@ -809,7 +810,7 @@ caption title:
 string image:
 body body:
 width: percent 30
-width if $mobile: fill
+width if $fpm-ui.mobile: fill
 spacing: 15
 padding-top: 60
 
@@ -842,18 +843,18 @@ background-color: #f5f6f7
 open: main-container
 
 --- ftd.row:
-width: fill
-if: not $mobile
+if: not $fpm-ui.mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
 padding-bottom: 60
 id: main-container
+width: fill
 
 --- container: ftd.main
 
 --- ftd.column:
-if: $mobile
+if: $fpm-ui.mobile
 width: fill
 padding-horizontal: 20
 spacing: space-around
@@ -867,7 +868,7 @@ string image:
 string designation:
 body body:
 width: percent 30
-width if $mobile: fill
+width if $fpm-ui.mobile: fill
 spacing: 15
 padding-top: 60
 
