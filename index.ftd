@@ -1,16 +1,15 @@
 -- import: fpm-ui
 
 -- boolean dark-mode: true
--- boolean mobile: false
 -- boolean sidebar-open: false
 
 -- string neutral: #fff
--- string neutral-200: #ced2dd
+-- string neutral-200: #e5e5e5
 -- string neutral-300: #F9F9F9
 -- string neutral-400: #E1E1E1
 -- string neutral-500: #323546
 -- string neutral-600: #3E4155
--- string neutral-700: #1C1C24
+-- string neutral-700: #18191a
 -- string neutral-800: #000
 
 -- integer content-padding: 150
@@ -33,6 +32,7 @@ toc-item list children:
 -- ftd.column page:
 width: fill
 background-color: $neutral
+background-color if $dark-mode: $neutral-700
 open: content-container
 
 --- ftd.column:
@@ -97,6 +97,7 @@ toc-item list toc: $toc
 width: fill
 open: main-container
 
+
 --- doc-page-desktop:
 if: not $fpm-ui.mobile
 id: main-container
@@ -114,6 +115,8 @@ toc-item list toc: $toc
 width: fill
 open: main-container
 background-color: $neutral
+background-color if $dark-mode: $neutral-700
+
 
 --- header:
 
@@ -143,6 +146,7 @@ toc-item list toc: $toc
 width: fill
 open: main-container
 background-color: $neutral
+background-color if $dark-mode: $neutral-700
 
 
 --- ftd.column:
@@ -189,6 +193,7 @@ size: 16
 style: semi-bold
 font: apple-system
 color: black
+color if $dark-mode: $neutral
 text: $title
 line-height: 22
 position: center
@@ -199,6 +204,7 @@ string link:
 size: 16
 font: apple-system
 color: black
+color if $dark-mode: $neutral
 text: $title
 link: $link
 line-height: 22
@@ -215,6 +221,7 @@ padding-horizontal: 90
 text: $title
 size: 40
 color: black
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 24
 font: apple-system
@@ -223,26 +230,16 @@ font: apple-system
 if: $body is not null
 body: $body
 
--- ftd.text markdown:
-body body:
-optional boolean collapsed:
-optional caption title:
-optional boolean two_columns:
-text: $body
-size: 19
-line-height: 30
-color: #4d4d4d
-padding-bottom: 34
-font: apple-system
-
 
 -- ftd.row header:
 width: fill
 background-color: white
+background-color if $dark-mode: $neutral-700
 padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
+border-color if $dark-mode: #343434
 
 --- ftd.row:
 position: left
@@ -290,10 +287,12 @@ $event-click$: toggle $dark-mode
 -- ftd.row header-mobile:
 width: fill
 background-color: white
+background-color if $dark-mode: $neutral-700
 padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
+border-color if $dark-mode: #343434
 
 
 --- ftd.row:
@@ -486,6 +485,7 @@ padding-top: 3
 padding-bottom: 3
 font: apple-system
 color: $neutral-700
+color if $dark-mode: $neutral-200
 
 --- toc-instance:
 $loop$: $toc.children as $obj
@@ -505,6 +505,7 @@ padding-right: 20
 padding-bottom: 40
 border-right: 1
 border-color: #ebedef
+border-color if $dark-mode: #343434
 
 --- toc-instance:
 $loop$: $toc-obj as $obj
@@ -549,6 +550,7 @@ text: $body
 size: 15
 line-height: 24
 color: $neutral-700
+color if $dark-mode: $neutral-200
 padding-bottom: 8
 font: apple-system
 
@@ -569,6 +571,7 @@ text: $title
 size: 46
 line-height: 46
 color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 16
 padding-top: 8
@@ -593,6 +596,7 @@ text: $title
 size: 19
 line-height: 24
 color: $neutral-800
+color if $dark-mode: $neutral
 style: italic
 padding-bottom: 8
 padding-top: 16
@@ -616,7 +620,8 @@ text: $title
 region: title
 size: 30
 line-height: 40
-color: $neutral-700
+color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 8
 padding-top: 16
@@ -641,6 +646,7 @@ region: title
 size: 26
 line-height: 32
 color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 8
 padding-top: 16
@@ -665,6 +671,7 @@ region: title
 size: 21
 line-height: 30
 color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 8
 padding-top: 16
@@ -689,6 +696,7 @@ region: title
 size: 18
 line-height: 24
 color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 12
 padding-top: 34
@@ -711,6 +719,7 @@ region: title
 size: 16
 line-height: 22
 color: $neutral-800
+color if $dark-mode: $neutral
 style: bold
 padding-bottom: 12
 padding-top: 34
@@ -785,8 +794,8 @@ width: fill
 open: main-container
 
 --- ftd.row:
-if: not $fpm-ui.mobile
 width: fill
+if: not $fpm-ui.mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
@@ -826,6 +835,8 @@ font: apple-system
 width: fill
 text-align: center
 style: bold
+color if $dark-mode: $neutral
+
 
 --- ftd.text:
 text: $body
@@ -835,21 +846,22 @@ line-height: 26
 font: apple-system
 width: fill
 text-align: center
-
+color if $dark-mode: $neutral
 
 -- ftd.row testimony-list:
 width: fill
 background-color: #f5f6f7
+background-color if $dark-mode: #2b3136
 open: main-container
 
 --- ftd.row:
+width: fill
 if: not $fpm-ui.mobile
 padding-horizontal: $content-padding
 spacing: space-between
 wrap: true
 padding-bottom: 60
 id: main-container
-width: fill
 
 --- container: ftd.main
 
@@ -885,6 +897,7 @@ font: apple-system
 width: fill
 text-align: center
 style: bold
+color if $dark-mode: $neutral
 
 --- ftd.text: $designation
 width: fill
@@ -892,6 +905,7 @@ size: 14
 font: apple-system
 width: fill
 text-align: center
+color if $dark-mode: $neutral
 
 --- ftd.text:
 text: $body
@@ -901,6 +915,7 @@ line-height: 26
 font: apple-system
 width: fill
 text-align: center
+color if $dark-mode: $neutral
 
 
 -- ftd.iframe iframe:
@@ -981,6 +996,7 @@ align: $align
 if: $caption is not null
 text: $caption
 color: $neutral-800
+color if $dark-mode: $neutral
 align: center
 width: fill
 size: 17
