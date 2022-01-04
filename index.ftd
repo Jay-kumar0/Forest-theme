@@ -1,6 +1,6 @@
 -- import: fpm-ui
 
--- boolean dark-mode: true
+-- boolean dark-mode: false
 -- boolean sidebar-open: false
 
 -- string neutral: #fff
