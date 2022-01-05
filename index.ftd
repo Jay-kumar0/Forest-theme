@@ -25,8 +25,16 @@ caption title:
 string url:
 toc-item list children:
 
+-- record footer-item:
+caption label:
+toc-item list children:
+
 -- toc-item list header-toc:
+
 -- toc-item list toc:
+
+-- footer-item list footer-toc:
+
 
 
 -- ftd.column page:
@@ -68,6 +76,7 @@ id: content-container
 --- container: ftd.main
 
 --- footer:
+footer-toc: $footer-toc
 
 
 -- ftd.column content:
@@ -139,7 +148,7 @@ padding-vertical: 20
 --- container: ftd.main
 
 --- footer:
-
+footer-toc: $footer-toc
 
 -- ftd.column doc-page-mobile:
 toc-item list toc: $toc
@@ -185,7 +194,7 @@ padding-vertical: 20
 --- container: ftd.main
 
 --- footer:
-
+footer-toc: $footer-toc
 
 -- ftd.text site-link:
 caption title:
@@ -340,10 +349,51 @@ height: 18
 $event-click$: toggle $dark-mode
 
 
+-- ftd.text footer-link:
+string url:
+caption title:
+link: $url
+text: $title
+size: 15
+line-height: 22
+min-width: fit-content
+padding-left: 10
+padding-top: 6
+padding-bottom: 6
+font: apple-system
+color: $neutral
+
+-- ftd.column footer-instance:
+footer-item footer-toc:
+min-width: portion 1
+
+--- ftd.text: $footer-toc.label
+size: 15
+line-height: 40
+min-width: fit-content
+padding-left: 10
+padding-top: 3
+padding-bottom: 8
+font: apple-system
+color: $neutral
+style: semi-bold
+
+--- footer-link: $obj.title
+$loop$: $footer-toc.children as $obj
+url: $obj.url
+
+
 -- ftd.row footer:
+footer-item list footer-toc:
 width: fill
-height: 200
-background-color: $neutral-300
+background-color: #2b3136
+padding-horizontal: 150
+padding-vertical: 50
+spacing: space-between
+
+--- footer-instance:
+$loop$: $footer-toc as $obj
+footer-toc: $obj
 
 
 -- ftd.column hero:
