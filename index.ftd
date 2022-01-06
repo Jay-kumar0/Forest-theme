@@ -409,10 +409,37 @@ url: $obj.url
 -- ftd.row footer:
 footer-item list footer-toc:
 width: fill
+
+--- footer-desktop:
+if: not $fpm-ui.mobile
+footer-toc: $footer-toc
+
+container: ftd.main
+
+--- footer-mobile:
+if: $fpm-ui.mobile
+footer-toc: $footer-toc
+
+
+-- ftd.row footer-desktop:
+footer-item list footer-toc:
+width: fill
 background-color: #2b3136
 padding-horizontal: 150
 padding-vertical: 50
 spacing: space-between
+
+--- footer-instance:
+$loop$: $footer-toc as $obj
+footer-toc: $obj
+
+-- ftd.column footer-mobile:
+footer-item list footer-toc:
+width: fill
+background-color: #2b3136
+padding-horizontal: 20
+padding-vertical: 50
+position: left
 
 --- footer-instance:
 $loop$: $footer-toc as $obj
@@ -424,17 +451,20 @@ caption title:
 string image:
 open: main-container
 
---- hero-mobile: $title
-if: $fpm-ui.mobile
+--- hero-desktop: $title
+if: not $fpm-ui.mobile
 id: main-container
 image: $image
 
 --- container: ftd.main
 
---- hero-desktop: $title
-if: not $fpm-ui.mobile
+--- hero-mobile: $title
+if: $fpm-ui.mobile
 id: main-container
 image: $image
+
+
+
 
 
 -- ftd.column hero-desktop:
@@ -600,10 +630,12 @@ padding-right: 20
 padding-bottom: 40
 border-right: 1
 border-color: #ebedef
+border-color if $fpm-ui.dark-mode: $neutral-700
 anchor: window
 left: 0
 top: 0
 background-color: white
+background-color if $fpm-ui.dark-mode: $neutral-700
 shadow-offset-x: 3
 shadow-offset-y: 0
 shadow-size: 1
