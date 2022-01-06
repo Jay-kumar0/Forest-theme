@@ -318,7 +318,7 @@ ul {
 </style>
     </head>
     <body>
-        <div data-id="main:root" style="align-items: flex-start; align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: wrap; height: 100%; justify-content: flex-start; margin-bottom: auto; margin-top: auto; white-space: initial; width: 100%" class="ft_md"></div>
+        <div data-id="main:root" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: wrap; height: 100%; justify-content: flex-start; white-space: initial; width: 100%" class="ft_md"></div>
         <script>
             // all ftd_utils are meant to be pure functions only: they can only depend on the
 // input passed, not on closures or global data etc
@@ -841,6 +841,7 @@ window.ftd = (function () {
     const COOKIE_SYSTEM_DARK = "system-dark";
     const COOKIE_DARK_MODE = "dark";
     const COOKIE_LIGHT_MODE = "light";
+    const DARK_MODE_CLASS = "fpm-dark";
 
     let last_device;
 
@@ -933,6 +934,7 @@ window.ftd = (function () {
         //       update
         window.ftd.set_bool_for_all(FPM_DARK_MODE, true);
         window.ftd.set_bool_for_all(FPM_FOLLOW_SYSTEM_DARK_MODE, false);
+        document.body.classList.add(DARK_MODE_CLASS);
         set_cookie(DARK_MODE_COOKIE, COOKIE_DARK_MODE);
     }
 
@@ -941,6 +943,7 @@ window.ftd = (function () {
         //       update
         window.ftd.set_bool_for_all(FPM_DARK_MODE, false);
         window.ftd.set_bool_for_all(FPM_FOLLOW_SYSTEM_DARK_MODE, false);
+        document.body.classList.remove(DARK_MODE_CLASS);
         set_cookie(DARK_MODE_COOKIE, COOKIE_LIGHT_MODE);
     }
 
@@ -950,9 +953,11 @@ window.ftd = (function () {
         window.ftd.set_bool_for_all(FPM_FOLLOW_SYSTEM_DARK_MODE, true);
         if (system_dark_mode()) {
             window.ftd.set_bool_for_all(FPM_DARK_MODE, true);
+            document.body.classList.add(DARK_MODE_CLASS);
             set_cookie(DARK_MODE_COOKIE, COOKIE_SYSTEM_DARK)
         } else {
             window.ftd.set_bool_for_all(FPM_DARK_MODE, false);
+            document.body.classList.remove(DARK_MODE_CLASS);
             set_cookie(DARK_MODE_COOKIE, COOKIE_SYSTEM_LIGHT)
         }
     }
