@@ -276,6 +276,10 @@ link: $obj.url
 
 --- container: ftd.main
 
+--- ftd.column:
+width: fill
+position: center
+
 --- ftd.row:
 position: right
 spacing: 30
@@ -288,6 +292,7 @@ src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_x
 width: 20
 min-width: 20
 link: $github
+align: center
 
 --- container: action-container
 
@@ -297,6 +302,7 @@ src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-light_
 width: 20
 min-width: 20
 link: $github
+align: center
 
 --- container: action-container
 
@@ -305,6 +311,7 @@ if: not $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
 $event-click$: message-host enable-dark-mode
+align: center
 
 --- container: action-container
 
@@ -313,6 +320,7 @@ if:  $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1641367492/light-mode_o0zne7.svg
 height: 18
 $event-click$: message-host enable-light-mode
+align: center
 
 
 
@@ -929,11 +937,15 @@ width: percent 30
 width if $fpm-ui.mobile: fill
 spacing: 15
 padding-top: 60
+align: left
+
 
 --- ftd.image:
 src: $image
 width: percent 60
-position: top
+align: center
+
+--- container: ftd.main
 
 --- ftd.text: $title
 width: fill
@@ -995,7 +1007,7 @@ padding-top: 60
 src: $image
 width: percent 30
 border-radius: 1000
-position: top
+align: center
 
 --- ftd.text: $title
 width: fill
