@@ -275,10 +275,10 @@ link: $obj.url
 
 
 --- container: ftd.main
+--- header-right:
 
---- ftd.row:
+-- ftd.row header-right:
 spacing: 30
-id: action-container
 align: center
 move-down: 3
 
@@ -288,23 +288,17 @@ src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_x
 width: 20
 link: $github
 
---- container: action-container
-
 --- ftd.image:
 if:  $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-light_thra25.svg
 width: 20
 link: $github
 
---- container: action-container
-
 --- ftd.image:
 if: not $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
 $event-click$: message-host enable-dark-mode
-
---- container: action-container
 
 --- ftd.image:
 if:  $fpm-ui.dark-mode
@@ -324,7 +318,7 @@ padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
 border-color if $fpm-ui.dark-mode: #343434
-
+spacing: space-between
 
 --- ftd.row:
 position: left
@@ -349,27 +343,9 @@ width: auto
 
 --- site-link: $site-name
 
---- container: left-side
-
-
 --- container: ftd.main
 
---- ftd.row:
-position: right
-spacing: 30
-width: auto
-
---- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
-width: 20
-min-width: 20
-link: $github
-
---- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
-height: 18
-$event-click$: toggle $fpm-ui.dark-mode
-
+--- header-right:
 
 -- ftd.text footer-link:
 string url:
@@ -466,47 +442,45 @@ image: $image
 
 
 
--- ftd.column hero-desktop:
+-- ftd.grid hero-desktop:
 caption title:
 string image:
 width: fill
+slots: text icon | cta icon
+slot-widths: auto 20%
 background-color: #2b3136
-padding-horizontal: $content-padding
-padding-vertical: 50
+/padding-horizontal: $content-padding
+/padding-vertical: 50
 spacing: 40
+padding: 60
 open: desktop-action-container
 
---- ftd.row:
-width: fill
-
 --- ftd.text: $title
+slot: text
 size: 56
 line-height: 80
 style: bold
 color: $neutral
-width: percent 75
-position: center
 font: apple-system
 
 --- ftd.image:
+slot: icon
+align: center
 src: $image
-width: percent 15
-height: auto
-position: right
 
---- container: ftd.main
-
---- ftd.row:
+--- ftd.grid:
+slot: cta
+slots: cta-1 cta-2
 id: desktop-action-container
+align: center
 spacing: 40
 
 
 
--- ftd.column hero-mobile:
+-- ftd.grid hero-mobile:
 caption title:
 string image:
-optional string id:
-id: $id
+slots: text | icon | cta
 width: fill
 background-color: #2b3136
 padding-horizontal: 20
@@ -516,27 +490,27 @@ open: mobile-action-container
 
 --- ftd.image:
 src: $image
-width: percent 50
-height: auto
-position: center
+align: center
+width: percent 30
+slot: icon
 
 --- ftd.text: $title
+slot: text
 size: 36
 line-height: 50
 style: bold
 color: $neutral
 padding-horizontal: 20
-position: center
 text-align: center
 font: apple-system
 
---- container: ftd.main
-
---- ftd.column:
+--- ftd.grid:
+slot: cta
+slots: cta-1 | cta-2
 id: mobile-action-container
-position: center
 padding-top: 10
 spacing: 30
+align: center
 
 
 
