@@ -242,6 +242,7 @@ body: $body
 
 -- ftd.row header:
 width: fill
+spacing: space-between
 background-color: white
 background-color if $fpm-ui.dark-mode: $neutral-700
 padding-horizontal: 20
@@ -251,7 +252,6 @@ border-color: #e1e1e1
 border-color if $fpm-ui.dark-mode: #343434
 
 --- ftd.row:
-position: left
 spacing: 25
 id: left-side
 
@@ -276,23 +276,17 @@ link: $obj.url
 
 --- container: ftd.main
 
---- ftd.column:
-width: fill
-position: center
-
 --- ftd.row:
-position: right
 spacing: 30
-width: auto
 id: action-container
+align: center
+move-down: 3
 
 --- ftd.image:
 if: not $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
 width: 20
-min-width: 20
 link: $github
-align: center
 
 --- container: action-container
 
@@ -300,9 +294,7 @@ align: center
 if:  $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-light_thra25.svg
 width: 20
-min-width: 20
 link: $github
-align: center
 
 --- container: action-container
 
@@ -311,7 +303,6 @@ if: not $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
 $event-click$: message-host enable-dark-mode
-align: center
 
 --- container: action-container
 
@@ -320,7 +311,7 @@ if:  $fpm-ui.dark-mode
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1641367492/light-mode_o0zne7.svg
 height: 18
 $event-click$: message-host enable-light-mode
-align: center
+
 
 
 
