@@ -37,6 +37,12 @@ toc-item list children:
 
 
 
+
+-- ftd.text yellow: yellow text
+background-color if not $fpm-ui.dark-mode: yellow
+color: black
+color if $fpm-ui.dark-mode: yellow
+
 -- ftd.column page:
 width: fill
 background-color: $neutral
