@@ -1160,6 +1160,7 @@ caption title:
 string image:
 optional string link: /
 boolean active:
+string cta-text:
 width: 400
 height: 225
 width if $fpm-ui.mobile: fill
@@ -1183,7 +1184,7 @@ padding-vertical: 5
 min-width: 200
 color: white
 
---- ftd.text: Select Theme
+--- ftd.text: $cta-text
 if: $active
 size: 15
 font: apple-system
@@ -1200,7 +1201,7 @@ padding-horizontal: 20
 
 --- container: ftd.main
 
---- ftd.text: Coming soon
+--- ftd.text: $cta-text
 if: not $active
 size: 15
 font: apple-system
