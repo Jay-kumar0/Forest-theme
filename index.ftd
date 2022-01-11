@@ -1244,6 +1244,7 @@ padding-horizontal: 20
 caption title:
 string image:
 optional string link: /
+optional string live_preview:
 width: 400
 height: 225
 width if $fpm-ui.mobile: fill
@@ -1267,14 +1268,32 @@ padding-vertical: 5
 min-width: 200
 color: white
 
+--- ftd.row:
+anchor: parent
+bottom: 30
+right: 40
+id: link-row
+
+--- container: link-row
+
+--- ftd.text: Live Preview
+size: 15
+if: $live_preview is not null
+font: apple-system
+text-align: center
+link: $live_preview
+color: white
+background-color: #2db7f5
+border-radius: 20
+padding-vertical: 5
+padding-horizontal: 20
+margin-right: 5
+
 --- ftd.text: Create
 size: 15
 font: apple-system
 text-align: center
 link: $link
-anchor: parent
-bottom: 30
-right: 40
 color: white
 background-color: #2db7f5
 border-radius: 20
@@ -1301,6 +1320,7 @@ if: $link is not null
 link: $link
 size: 16
 color: $neutral-700
+color if $fpm-ui.dark-mode: white
 font: apple-system
 style: medium
 
@@ -1314,6 +1334,7 @@ width: 16
 --- ftd.text: $title
 if: $link is null
 color: $neutral-600
+color if $fpm-ui.dark-mode: white
 font: apple-system
 style: medium
 
