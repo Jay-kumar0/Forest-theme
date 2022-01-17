@@ -167,6 +167,8 @@ align: top
 padding-horizontal: 20
 padding-vertical: 20
 
+--- translation-block:
+
 --- container: ftd.main
 
 --- footer:
@@ -212,6 +214,8 @@ width: fill
 align: top
 padding-horizontal: 20
 padding-vertical: 20
+
+--- translation-block:
 
 --- container: ftd.main
 
@@ -1338,3 +1342,327 @@ font: apple-system
 style: medium
 
 
+
+
+-- ftd.column missing-translation:
+width: fill
+padding-vertical: 12
+spacing: 10
+
+--- ftd.column:
+background-color: rgba (232, 127, 133, 0.05)
+border-width: 1
+border-color: rgba (232, 127, 133, 0.2)
+width: fill
+padding-horizontal: 20
+padding-top: 12
+padding-bottom: 6
+border-radius: 3
+
+--- ftd.text: $fpm-ui.translation-not-available
+font: apple-system
+size: 16
+
+--- translation-message:
+
+--- container: ftd.main
+
+--- status-button-row:
+
+--- translation-status-button:
+
+
+
+
+-- ftd.column never-marked:
+width: fill
+padding-vertical: 12
+spacing: 10
+
+--- ftd.column:
+background-color: rgba (232, 127, 133, 0.05)
+border-width: 1
+border-color: rgba (232, 127, 133, 0.2)
+width: fill
+padding-horizontal: 20
+padding-top: 12
+padding-bottom: 6
+border-radius: 3
+
+--- ftd.text: $fpm-ui.unapproved-heading
+font: apple-system
+size: 16
+
+--- translation-message:
+
+--- container: ftd.main
+
+--- status-button-row:
+
+--- translation-status-button:
+
+--- translation-switch-buttons:
+primary-text: $fpm-ui.show-unapproved-version
+fallback-text: $fpm-ui.show-latest-version
+
+-- ftd.column out-of-date:
+width: fill
+padding-vertical: 12
+spacing: 10
+
+--- ftd.column:
+background-color: rgba (232, 127, 133, 0.05)
+border-width: 1
+border-color: rgba (232, 127, 133, 0.2)
+width: fill
+padding-horizontal: 20
+padding-top: 12
+padding-bottom: 6
+border-radius: 3
+id: inner
+
+--- ftd.text: $fpm-ui.out-dated-heading
+font: apple-system
+size: 16
+
+--- ftd.text: $fpm-ui.out-dated-body
+font: apple-system
+size: 14
+padding-vertical: 10
+align: center
+line-height: 20
+
+--- ftd.column:
+if: $fpm.diff is not null
+max-width: 700
+width: fill
+position: center
+padding-vertical: 15
+
+--- ftd.code:
+if: $fpm.diff is not null
+lang: diff
+padding: 10
+border-radius: 5
+background-color: #2b303b
+
+$fpm.diff
+
+--- container: ftd.main
+
+--- status-button-row:
+
+--- translation-status-button:
+
+--- translation-switch-buttons:
+primary-text:  $fpm-ui.show-outdated-version
+fallback-text: $fpm-ui.show-latest-version
+
+
+-- ftd.row translation-message:
+width: fill
+spacing: space-between
+padding-top: 15
+padding-bottom: 5
+
+--- ftd.column:
+spacing: 5
+
+--- key-value: $fpm-ui.last-modified-on
+value: $fpm.current-document-last-modified-on
+default: $fpm-ui.never-synced
+
+-- ftd.row key-value:
+caption key:
+optional string value:
+string default:
+margin-bottom: 10
+spacing: 2
+position: center
+
+--- ftd.text: $key
+position: center
+font: apple-system
+size: 14
+
+--- ftd.text: $value
+if: $value is not null
+position: center
+font: apple-system
+size: 14
+
+--- ftd.text: $default
+if: $value is null
+position: center
+font: apple-system
+size: 14
+
+
+
+-- ftd.row key-value-without-default:
+caption key:
+optional string value:
+margin-bottom: 5
+spacing: 2
+if: $value is not null
+
+--- ftd.text: $key
+position: center
+font: apple-system
+
+--- ftd.text: $value
+if: $value is not null
+position: center
+font: apple-system
+
+
+-- ftd.column status-button-row:
+width: fill
+open: main-container
+
+--- ftd.row:
+position: right
+id: main-container
+spacing: 30
+
+
+-- ftd.row translation-status-button:
+width: fill
+
+--- ftd.text: $fpm-ui.show-translation-status
+link: $fpm.translation-status-url
+background-color: #d27355
+border-radius: 4
+color: white
+border-color: #26644f
+padding-vertical: 6
+padding-horizontal: 15
+size: 12
+font: apple-system
+min-width: 180
+text-align: center
+
+
+
+-- ftd.row translation-switch-buttons:
+width: fill
+string primary-text:
+string fallback-text:
+
+--- ftd.text: $primary-text
+if: $show-main
+$event-click$: toggle $show-main
+$event-click$: message-host show_fallback
+border-radius: 4
+padding-horizontal: 15
+padding-vertical: 6
+shadow-offset-x: 0
+shadow-offset-y: 0
+shadow-size: 0
+shadow-blur: 6
+shadow-color: rgba (0, 0, 0, 0.05)
+font: apple-system
+background-color: #d27355
+color: white
+size: 12
+min-width: 180
+text-align: center
+
+--- ftd.text: $fallback-text
+if: not $show-main
+$event-click$: toggle $show-main
+$event-click$: message-host show_main
+border-radius: 4
+padding-horizontal: 15
+padding-vertical: 6
+shadow-offset-x: 0
+shadow-offset-y: 0
+shadow-size: 0
+shadow-blur: 6
+shadow-color: rgba (0, 0, 0, 0.05)
+font: apple-system
+background-color: #d27355
+color: white
+size: 12
+min-width: 180
+text-align: center
+
+
+-- ftd.row available-language:
+anchor: window
+boolean show-menu: false
+bottom: 30
+right: 50
+z-index: 1
+
+--- ftd.text: $fpm-ui.other-available-languages
+if: $fpm.language is null
+
+--- ftd.column:
+width: fill
+if: $fpm.language is not null
+
+--- ftd.text: $fpm-ui.current-language
+font: apple-system
+size: 12
+position: left
+padding-left: 5
+
+--- ftd.text: $fpm.language
+border-width: 1
+border-color: #adaeb3
+margin-top: 5
+margin-bottom: 5
+margin-left: 5
+margin-right: 5
+$event-click$: toggle $show-menu
+padding-horizontal: 10
+padding-vertical: 4
+background-color: white
+border-radius: 2
+font: apple-system
+size: 15
+min-width: 160
+
+--- container: ftd.main
+
+--- ftd.column:
+position: right
+width: fill
+
+--- ftd.column:
+if: $show-menu
+anchor: parent
+background-color: #f1f1f1
+min-width: 160
+shadow-offset-x: 0
+shadow-offset-y: 4
+shadow-blur: 8
+position: inner top-right
+width: fill
+margin-top: 10
+$event-click$: toggle $show-menu
+bottom: -20
+right: 5
+
+--- ftd.text: $obj.title
+$loop$: $fpm.language-toc as $obj
+link: $obj.url
+padding: 10
+width: fill
+border-bottom: 1
+border-color: #e3e1e1
+font: apple-system
+size: 15
+color: black
+
+-- ftd.column translation-block:
+width: fill
+
+--- missing-translation:
+
+--- never-marked:
+
+--- out-of-date:
+
+--- available-language:
