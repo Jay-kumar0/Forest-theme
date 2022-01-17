@@ -218,28 +218,26 @@ padding-vertical: 20
 --- footer:
 footer-toc: $footer-toc
 
--- ftd.text site-link:
+-- ftd.text site-link: $title
 caption title:
 size: 16
 style: semi-bold
 font: apple-system
 color: black
 color if $fpm.dark-mode: $neutral
-text: $title
 line-height: 22
-position: center
+align: center
 
--- ftd.text header-link:
+-- ftd.text header-link: $title
 caption title:
 string link:
 size: 16
 font: apple-system
 color: black
 color if $fpm.dark-mode: $neutral
-text: $title
 link: $link
 line-height: 22
-position: center
+align: center
 
 
 -- ftd.column h0:
@@ -289,7 +287,6 @@ width: auto
 --- site-link: $site-name
 
 --- container: left-side
-
 
 --- header-link: $obj.title
 $loop$: $header-toc as $obj
@@ -1338,3 +1335,7 @@ font: apple-system
 style: medium
 
 
+-- ftd.text highlight: $title
+caption title:
+color if $fpm.dark-mode: yellow
+background-color if not $fpm.dark-mode: yellow
