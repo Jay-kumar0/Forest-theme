@@ -754,7 +754,8 @@ text: $title
 region: title
 size: 30
 line-height: 40
-color: $neutral-800
+/color: $neutral-800
+color: green
 color if $fpm.dark-mode: $neutral
 style: bold
 padding-bottom: 8
