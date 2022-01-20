@@ -223,17 +223,18 @@ caption title:
 size: 16
 style: semi-bold
 font: apple-system
-color: black
+color: white
 color if $fpm.dark-mode: $neutral
 line-height: 22
 align: center
+
 
 -- ftd.text header-link: $title
 caption title:
 string link:
 size: 16
 font: apple-system
-color: black
+color: white
 color if $fpm.dark-mode: $neutral
 link: $link
 line-height: 22
@@ -262,15 +263,17 @@ body: $body
 
 -- ftd.row header:
 width: fill
-background-color: white
+background-color: #1F5E6B
 background-color if $fpm.dark-mode: $neutral-700
 padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
 border-color if $fpm.dark-mode: #343434
+color: white
 
 --- ftd.row:
+width: fill
 position: left
 spacing: 25
 id: left-side
@@ -307,7 +310,8 @@ id: action-container
 
 --- ftd.image:
 if: not $fpm.dark-mode
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
+/src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-light_thra25.svg
 width: 20
 min-width: 20
 link: $github
@@ -327,7 +331,8 @@ align: center
 
 --- ftd.image:
 if: not $fpm.dark-mode
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
+/src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1641367492/light-mode_o0zne7.svg
 height: 18
 $event-click$: message-host enable-dark-mode
 align: center
@@ -374,6 +379,7 @@ link: $site-url
 src: $site-icon
 height: 32
 width: auto
+
 
 --- site-link: $site-name
 
@@ -638,6 +644,7 @@ padding-bottom: 40
 border-right: 1
 border-color: #ebedef
 border-color if $fpm.dark-mode: #343434
+background-color: #FFFBEF
 
 --- toc-instance:
 $loop$: $toc-obj as $obj
@@ -755,7 +762,7 @@ region: title
 size: 30
 line-height: 40
 /color: $neutral-800
-color: green
+color: #1F5E6B
 color if $fpm.dark-mode: $neutral
 style: bold
 padding-bottom: 8
