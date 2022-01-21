@@ -8,8 +8,15 @@
 -- string neutral-400: #E1E1E1
 -- string neutral-500: #323546
 -- string neutral-600: #3E4155
--- string neutral-700: #18191a
+/-- string neutral-700: #18191a
+-- string neutral-700: #082b32
 -- string neutral-800: #000
+-- string header-dark-color: #11404a
+-- string header-light-color: #1F5E6B
+-- string sidebar-dark-color: #082b32
+-- string sidebar-light-color: #FFFBEF
+
+
 
 -- integer content-padding: 150
 -- integer max-width: 1000
@@ -263,8 +270,8 @@ body: $body
 
 -- ftd.row header:
 width: fill
-background-color: #1F5E6B
-background-color if $fpm.dark-mode: $neutral-700
+background-color: $header-light-color
+background-color if $fpm.dark-mode: $header-dark-color
 padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
@@ -350,8 +357,8 @@ align: center
 
 -- ftd.row header-mobile:
 width: fill
-background-color: #1F5E6B
-background-color if $fpm.dark-mode: $neutral-700
+background-color: $header-light-color
+background-color if $fpm.dark-mode: $header-dark-color
 padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
@@ -653,9 +660,10 @@ padding-top: 15
 padding-right: 20
 padding-bottom: 40
 border-right: 1
-border-color: #ebedef
-border-color if $fpm.dark-mode: #343434
-background-color: #FFFBEF
+border-color: $sidebar-light-color
+border-color if $fpm.dark-mode: #32616a
+background-color if $fpm.dark-mode: $sidebar-dark-color
+background-color:  $sidebar-light-color
 
 --- toc-instance:
 $loop$: $toc-obj as $obj
@@ -679,8 +687,8 @@ border-color if $fpm.dark-mode: $neutral-700
 anchor: window
 left: 0
 top: 0
-background-color: white
-background-color if $fpm.dark-mode: $neutral-700
+background-color: $sidebar-light-color
+background-color if $fpm.dark-mode:  $sidebar-dark-color
 shadow-offset-x: 3
 shadow-offset-y: 0
 shadow-size: 1
