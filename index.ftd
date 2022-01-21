@@ -388,21 +388,29 @@ width: auto
 
 --- container: ftd.main
 
+--- ftd.column: 
+width: fill
+position: center
+
 --- ftd.row:
 position: right
 spacing: 30
 width: auto
+
+
 
 --- ftd.image:
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
 width: 20
 min-width: 20
 link: $github
+align: center
 
 --- ftd.image:
 src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
 $event-click$: toggle $fpm.dark-mode
+align: center
 
 
 -- ftd.text footer-link:
