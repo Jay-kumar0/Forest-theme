@@ -11,7 +11,8 @@
 -- string neutral-600: #3E4155
 /-- string neutral-700: #18191a
 -- string neutral-700: #0A1A1F
--- string neutral-800: #000
+/-- string neutral-800: #000
+-- string neutral-800: #0A1A1F
 -- string header-dark-color: #11404a
 -- string header-light-color: #1F5E6B
 -- string sidebar-dark-color: #082b32
@@ -789,8 +790,7 @@ text: $title
 region: title
 size: 30
 line-height: 40
-/color: $neutral-800
-color: #1F5E6B
+color: $neutral-800
 color if $fpm.dark-mode: $neutral
 style: bold
 padding-bottom: 8
