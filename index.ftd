@@ -350,7 +350,7 @@ align: center
 
 -- ftd.row header-mobile:
 width: fill
-background-color: white
+background-color: #1F5E6B
 background-color if $fpm.dark-mode: $neutral-700
 padding-horizontal: 20
 padding-vertical: 10
@@ -365,7 +365,8 @@ spacing: 25
 id: left-side
 
 --- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1641205689/Vector_3_uzxoow.svg
+/src: https://res.cloudinary.com/dphj6havg/image/upload/v1641205689/Vector_3_uzxoow.svg
+src: https://res.cloudinary.com/datvlgpxl/image/upload/v1642751099/hamburger_ks2zcc.png
 width: 24
 height: auto
 $event-click$: toggle $sidebar-open
@@ -400,15 +401,17 @@ width: auto
 
 
 --- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
+/src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-dark_xeu6ot.svg
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938143/github-light_thra25.svg
 width: 20
 min-width: 20
 link: $github
 align: center
 
 --- ftd.image:
-src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
+/src: https://res.cloudinary.com/dphj6havg/image/upload/v1640938217/dark-mode_mfy9hd.svg
 height: 18
+src: https://res.cloudinary.com/dphj6havg/image/upload/v1641367492/light-mode_o0zne7.svg
 $event-click$: toggle $fpm.dark-mode
 align: center
 
