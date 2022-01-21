@@ -3,13 +3,14 @@
 -- boolean sidebar-open: false
 
 -- string neutral: #fff
--- string neutral-200: #e5e5e5
+/-- string neutral-200: #e5e5e5
+-- string neutral-200: #EDEDED
 -- string neutral-300: #F9F9F9
 -- string neutral-400: #E1E1E1
 -- string neutral-500: #323546
 -- string neutral-600: #3E4155
 /-- string neutral-700: #18191a
--- string neutral-700: #082b32
+-- string neutral-700: #0A1A1F
 -- string neutral-800: #000
 -- string header-dark-color: #11404a
 -- string header-light-color: #1F5E6B
@@ -169,9 +170,9 @@ toc-obj: $toc
 
 --- ftd.column:
 id: main-container
-max-width: 800
+max-width: 1104
 align: top
-padding-horizontal: 20
+padding-horizontal: 92
 padding-vertical: 20
 
 --- container: ftd.main
@@ -276,7 +277,7 @@ padding-horizontal: 20
 padding-vertical: 10
 border-bottom: 1
 border-color: #e1e1e1
-border-color if $fpm.dark-mode: #343434
+border-color if $fpm.dark-mode: #50656B
 color: white
 
 --- ftd.row:
@@ -296,9 +297,9 @@ width: auto
 
 --- site-link: $site-name
 
---- container: left-side
+/--- container: left-side
 
---- header-link: $obj.title
+/--- header-link: $obj.title
 $loop$: $header-toc as $obj
 link: $obj.url
 
@@ -314,6 +315,12 @@ position: right
 spacing: 30
 width: auto
 id: action-container
+
+
+--- header-link: $obj.title
+$loop$: $header-toc as $obj
+link: $obj.url
+
 
 --- ftd.image:
 if: not $fpm.dark-mode
@@ -476,6 +483,7 @@ footer-toc: $footer-toc
 footer-item list footer-toc:
 width: fill
 background-color: #2b3136
+background-color if $fpm.dark-mode: #242424
 padding-horizontal: 150
 padding-vertical: 50
 spacing: space-between
@@ -488,6 +496,7 @@ footer-toc: $obj
 footer-item list footer-toc:
 width: fill
 background-color: #2b3136
+background-color if $fpm.dark-mode: #242424
 padding-horizontal: 20
 padding-vertical: 50
 position: left
